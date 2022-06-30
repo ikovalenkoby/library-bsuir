@@ -1026,6 +1026,8 @@ footer .socials-block a:hover {
     position: absolute;
     top: 0.5rem;
     left: 0.938rem;
+    width: 1.563rem;
+    height: 1.563rem;
   }
 
   .header-menu.active .switch-header-menu-button span {
@@ -1039,7 +1041,7 @@ footer .socials-block a:hover {
     height: 0.175rem;
     position: absolute;
     background-color: #fff;
-    top: 1.063rem;
+    top: 0.625rem;
   }
 
   .header-menu.active .switch-header-menu-button:before {
@@ -1052,6 +1054,10 @@ footer .socials-block a:hover {
 
   .header-menu-item {
     padding-bottom: 1.375rem;
+  }
+
+  .header-menu.active .header-menu-item:hover > div {
+    text-decoration: underline;
   }
 
   .header-menu-item div {
