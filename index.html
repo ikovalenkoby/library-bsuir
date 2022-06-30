@@ -5,6 +5,615 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Библиотека БГУИР</title>
+    <link rel="preload" href="./fonts/MyriadPro-Regular.woff2" />
+    <link rel="preload" href="./fonts/MyriadPro-Bold.woff2" />
+    <link rel="preload" href="./fonts/Roboto-Regular.woff2" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/default.css" />
+    <link rel="stylesheet" href="./css/jssor-slider.css" />
+
+    <!-- <script src="./data-yandex.js"></script>
+    <script src="./menu-combined.js"></script> -->
   </head>
-  <body></body>
+  <body>
+    <!--JSSOR SLIDER-->
+    <script src="./js/jssor.slider.mini.js"></script>
+
+    <!--JQuery-->
+    <script src="./js/jquery-1.9.1.min.js"></script>
+
+    <header class="wrapper">
+      <div class="logo-container">
+        <a href="" class="logo-img">
+          <svg>
+            <use xlink:href="./img/icons.svg#logo"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="header-content-container">
+        <div class="header-top-row">
+          <form
+            class="search-container"
+            name=""
+            action=""
+            method="get"
+            accept-charset="utf-8"
+          >
+            <input
+              class="search-input"
+              name=""
+              value="Поиск по сайту"
+              onclick="this.value=''"
+              onselect="this.value=''"
+            />
+            <button type="submit" name="img" class="search-icon">
+              <svg>
+                <use xlink:href="./img/icons.svg#search-icon"></use>
+              </svg>
+            </button>
+          </form>
+
+          <a href="" title="Перейти в режим для слабовидящих" class="eye-icon"
+            ><svg>
+              <use xlink:href="./img/icons.svg#eye-icon"></use></svg
+          ></a>
+
+          <div class="languages-block">
+            <a class="active" href="">RU</a><a href="">EN</a>
+          </div>
+        </div>
+        <div class="header-bottom-row">
+          <div class="header-menu">
+            <ul>
+              <li class="header-menu-item">
+                <div>О нас</div>
+                <ul class="header-menu-popup">
+                  <li><a href="">Контакты</a></li>
+                  <li><a href="">Услуги</a></li>
+                  <li><a href="">История</a></li>
+                  <li><a href="">FAQ</a></li>
+                </ul>
+              </li>
+              <li class="header-menu-item">
+                <div>Ресурсы</div>
+                <ul class="header-menu-popup">
+                  <li><a href="">Электронный каталог</a></li>
+                  <li><a href="">Репозиторий</a></li>
+                  <li><a href="">СЭО</a></li>
+                  <li><a href="">Базы Данных</a></li>
+                  <li><a href="">Новые Книги</a></li>
+                </ul>
+              </li>
+              <li class="header-menu-item">
+                <div>Наука</div>
+                <ul class="header-menu-popup">
+                  <li><a href="">Центр технологий и инноваций</a></li>
+                  <li><a href="">Наукометрия</a></li>
+                  <li><a href="">Авторский профиль</a></li>
+                  <li><a href="">Социальные сети</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="switch-header-menu-button"><span></span></div>
+          </div>
+          <div class="socials-block">
+            <a
+              href="https://www.instagram.com/bsuirlibrary"
+              title="Мы в Instagram"
+              class="instagram-icon"
+              ><svg><use xlink:href="./img/icons.svg#instagram-icon"></use></svg
+            ></a>
+            <a
+              href="https://m.vk.com/library.bsuir"
+              title="Мы в VK"
+              class="vk-icon"
+              ><svg><use xlink:href="./img/icons.svg#vk-icon"></use></svg
+            ></a>
+            <a
+              href="https://www.facebook.com/library.bsuir"
+              title="Мы в Facebook"
+              class="fb-icon"
+              ><svg><use xlink:href="./img/icons.svg#fb-icon"></use></svg
+            ></a>
+            <a
+              href="https://www.tiktok.com/@librarybsuirofficial?lang=ru-RU"
+              title="Мы в TikTok"
+              class="tiktok-icon"
+              ><svg><use xlink:href="./img/icons.svg#tiktok-icon"></use></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="wrapper">
+      <div class="welcoming-block">
+        <img src="./img/welcoming-picture.jpg" alt="" />
+        <div class="welcoming-text">
+          <p>Библиотека БГУИР приветствует Вас!</p>
+          <p>Здесь каждый может исследовать и открывать для себя новое!</p>
+        </div>
+        <div class="main-buttons">
+          <a href="https://library.bsuir.by/">
+            <button class="repo-button">
+              Репозиторий<svg>
+                <use xlink:href="./img/icons.svg#button-arrow-icon"></use>
+              </svg>
+            </button> </a
+          ><a href="http://megapro/MegaPro/Web">
+            <button class="catalogue-button">
+              Каталог<svg>
+                <use xlink:href="./img/icons.svg#button-arrow-icon"></use>
+              </svg>
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="wrapper">
+          <div class="photo_show">
+            <!--Слайд-галлерея (28.12 внесены изменения в скрипт)-->
+            <script>
+              jssor_slider1_starter = function (containerId) {
+                //Reference http://www.jssor.com/development/slider-with-slideshow-no-jquery.html
+                //Reference http://www.jssor.com/development/tool-slideshow-transition-viewer.html
+
+                //var startIndex = Math.floor(Math.random() * 6);
+                var startIndex = 0;
+
+                var _SlideshowTransitions = [
+                  //Extrude Replace
+                  {
+                    $Duration: 1600,
+                    x: -0.2,
+                    $Delay: 40,
+                    $Cols: 12,
+                    $During: { $Left: [0.4, 0.6] },
+                    $SlideOut: true,
+                    $Formation: $JssorSlideshowFormations$.$FormationStraight,
+                    $Assembly: 260,
+                    $Easing: {
+                      $Left: $JssorEasing$.$EaseInOutExpo,
+                      $Opacity: $JssorEasing$.$EaseInOutQuad,
+                    },
+                    $Opacity: 2,
+                    $Outside: true,
+                    $Round: { $Top: 0.5 },
+                    $Brother: {
+                      $Duration: 1000,
+                      x: 0.2,
+                      $Delay: 40,
+                      $Cols: 12,
+                      $Formation: $JssorSlideshowFormations$.$FormationStraight,
+                      $Assembly: 1028,
+                      $Easing: {
+                        $Left: $JssorEasing$.$EaseInOutExpo,
+                        $Opacity: $JssorEasing$.$EaseInOutQuad,
+                      },
+                      $Opacity: 2,
+                      $Round: { $Top: 0.5 },
+                    },
+                  },
+                ];
+
+                var _CaptionTransitions = [
+                  //CLIP|LR
+                  {
+                    $Duration: 900,
+                    $Clip: 3,
+                    $Easing: $JssorEasing$.$EaseInOutCubic,
+                  },
+                  //CLIP|TB
+                  {
+                    $Duration: 900,
+                    $Clip: 12,
+                    $Easing: $JssorEasing$.$EaseInOutCubic,
+                  },
+                ];
+
+                var options = {
+                  $StartIndex: startIndex,
+
+                  $AutoPlay: true, //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                  $AutoPlaySteps: 1, //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                  $AutoPlayInterval: 4000, //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                  $PauseOnHover: 1, //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                  $ArrowKeyNavigation: true, //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                  $SlideDuration: 500, //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                  $MinDragOffsetToSlide: 20, //[Optional] Minimum drag offset to trigger slide , default value is 20
+                  //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                  //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                  $SlideSpacing: 0, //[Optional] Space between each slide in pixels, default value is 0
+                  $DisplayPieces: 1, //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                  $ParkingPosition: 0, //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                  $UISearchMode: 1, //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                  $PlayOrientation: 1, //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                  $DragOrientation: 3, //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                  $SlideshowOptions: {
+                    //[Optional] Options to specify and enable slideshow or not
+                    $Class: $JssorSlideshowRunner$, //[Required] Class to create instance of slideshow
+                    $Transitions: _SlideshowTransitions, //[Required] An array of slideshow transitions to play slideshow
+                    $TransitionsOrder: 1, //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                    $ShowLink: true, //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+                  },
+
+                  $CaptionSliderOptions: {
+                    //[Optional] Options which specifies how to animate caption
+                    $Class: $JssorCaptionSlider$, //[Required] Class to create instance to animate caption
+                    $CaptionTransitions: _CaptionTransitions, //[Required] An array of caption transitions to play caption, see caption transition section at jssor slideshow transition builder
+                    $PlayInMode: 1, //[Optional] 0 None (no play), 1 Chain (goes after main slide), 3 Chain Flatten (goes after main slide and flatten all caption animations), default value is 1
+                    $PlayOutMode: 3, //[Optional] 0 None (no play), 1 Chain (goes before main slide), 3 Chain Flatten (goes before main slide and flatten all caption animations), default value is 1
+                  },
+
+                  $BulletNavigatorOptions: {
+                    //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$, //[Required] Class to create navigator instance
+                    $ChanceToShow: 2, //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1, //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1, //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1, //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 10, //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 10, //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1, //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                  },
+
+                  $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$, //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2, //[Required] 0 Never, 1 Mouse Over, 2 Always
+                  },
+                };
+
+                var jssor_slider1 = new $JssorSlider$(containerId, options);
+
+                function ScaleSlider() {
+                  var bodyWidth = document.body.clientWidth;
+                  if (bodyWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1240));
+                  else window.setTimeout(ScaleSlider, 30);
+                }
+
+                ScaleSlider();
+
+                $(window).bind("load", ScaleSlider);
+                $(window).bind("resize", ScaleSlider);
+                $(window).bind("orientationchange", ScaleSlider);
+              };
+            </script>
+
+            <!-- Jssor Slider Begin -->
+            <div id="slider1_container" class="m_g_container">
+              <!-- Loading Screen -->
+              <div u="loading" class="m_g_loading">
+                <div class="m_g_loading_bg"></div>
+                <div class="m_g_loading_roam"></div>
+              </div>
+
+              <!-- Slides Container -->
+              <div u="slides" class="m_g_slides">
+                <div>
+                  <a href="#"
+                    ><img
+                      src="./img/becca-tapert-GnY_mW1Q6Xc-unsplash 1.png"
+                      u="image"
+                  /></a>
+                </div>
+                <div>
+                  <a href="#"
+                    ><img
+                      src="./img/becca-tapert-GnY_mW1Q6Xc-unsplash 1 (1).png"
+                      u="image"
+                  /></a>
+                </div>
+                <div>
+                  <a href="#"><img src="./img/баннер 1.png" u="image" /></a>
+                </div>
+                <div>
+                  <a href="#"><img src="./img/баннер 2.png" u="image" /></a>
+                </div>
+
+                <div>
+                  <a href="#"
+                    ><img
+                      src="./img/becca-tapert-GnY_mW1Q6Xc-unsplash 1 (2).png"
+                      u="image"
+                  /></a>
+                </div>
+              </div>
+
+              <div u="navigator" class="jssorb21 m_g_navigator">
+                <!-- bullet navigator item prototype -->
+                <div u="prototype" class="m_g_bullets"></div>
+              </div>
+              <!-- Arrow Left -->
+              <span u="arrowleft" class="jssora05l"> </span>
+              <!-- Arrow Right -->
+              <span u="arrowright" class="jssora05r"> </span>
+            </div>
+          </div>
+          <script>
+            jssor_slider1_starter("slider1_container");
+          </script>
+        </div>
+      </div>
+
+      <div class="buttons-group">
+        <a href="">
+          <button class="delivery-button">
+            <div>
+              <svg>
+                <use xlink:href="./img/icons.svg#button-delivery-icon"></use>
+              </svg>
+            </div>
+            Доставка документов
+          </button> </a
+        ><a href="">
+          <button class="innovations-button">
+            <div>
+              <svg>
+                <use xlink:href="./img/icons.svg#button-innovations-icon"></use>
+              </svg>
+            </div>
+            Центр технологий и инноваций
+          </button>
+        </a>
+        <a href="https://lms.bsuir.by/login/index.php">
+          <button class="seo-button">
+            <div>
+              <svg>
+                <use xlink:href="./img/icons.svg#button-seo-icon"></use>
+              </svg>
+            </div>
+            Система электронного обучения
+          </button> </a
+        ><a href="https://www.scopus.com/search/form.uri?display=basic#basic">
+          <button class="scopus-button">
+            <div>
+              <svg>
+                <use xlink:href="./img/icons.svg#button-scopus-icon"></use>
+              </svg>
+            </div>
+            SCOPUS
+          </button> </a
+        ><a href="">
+          <button class="availability-button">
+            <div>
+              <svg>
+                <use
+                  xlink:href="./img/icons.svg#button-availability-icon"
+                ></use>
+              </svg>
+            </div>
+            Обеспеченность учебных дисциплин
+          </button> </a
+        ><a href="https://elibrary.ru/defaultx.asp">
+          <button class="electronic-magazines-button">
+            <div>
+              <svg>
+                <use
+                  xlink:href="./img/icons.svg#button-electronic-magazines-icon"
+                ></use>
+              </svg>
+            </div>
+            Электронные журналы
+          </button>
+        </a>
+      </div>
+
+      <div class="new-products-block">
+        <span>Новые поступления</span>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slide-image-container">
+                <img src="./img/1 книга.png" alt="" />
+              </div>
+              <div class="slide-button-container">
+                <a href=""><button>Заказать</button></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-image-container">
+                <img src="./img/Rectangle 467.png" alt="" />
+              </div>
+              <div class="slide-button-container">
+                <a href=""><button>Заказать</button></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-image-container">
+                <img src="./img/14-690x1024 1.png" alt="" />
+              </div>
+              <div class="slide-button-container">
+                <a href=""><button>Заказать</button></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-image-container">
+                <img src="./img/Jacket 1.png" alt="" />
+              </div>
+              <div class="slide-button-container">
+                <a href=""><button>Заказать</button></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-image-container">
+                <img src="./img/1025037466.jpg" alt="" />
+              </div>
+              <div class="slide-button-container">
+                <a href=""><button>Заказать</button></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-image-container">
+                <img src="./img/thus-spake-zarathustra-15.jpg" alt="" />
+              </div>
+              <div class="slide-button-container">
+                <a href=""><button>Заказать</button></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-image-container">
+                <img src="./img/335ca9d63a7fc04ecbfb698101f9e68d.jpg" alt="" />
+              </div>
+              <div class="slide-button-container">
+                <a href=""><button>Заказать</button></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-image-container">
+                <img src="./img/51faLlm1iVL.jpg" alt="" />
+              </div>
+              <div class="slide-button-container">
+                <a href=""><button>Заказать</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <a href=""><button>Посмотреть все</button></a>
+      </div>
+
+      <div class="map-block">
+        <div class="map-navigation">
+          <div class="active department">Корпус №2</div>
+          <div class="department">Корпус №3</div>
+          <div class="department">Корпус №4</div>
+          <div class="department">Корпус №8</div>
+        </div>
+        <div class="map-container">
+          <script
+            type="text/javascript"
+            charset="utf-8"
+            async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4f9685c70452a020c2c4f574055a952f0489513f352f77792c7b53e5200998c9&amp;width=756&amp;height=565&amp;lang=ru_RU&amp;scroll=true"
+          ></script>
+          <div class="map-text">
+            Библиотека БГУИР,<br />
+            отдел каталогизации<br />библиотеки<br />Открыто до 17:30<br />+375
+            17 293-86-90
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="wrapper">
+      <div class="footer-block-left">
+        <div class="logo-container">
+          <a href="" class="logo-img">
+            <svg>
+              <use xlink:href="./img/icons.svg#logo"></use>
+            </svg>
+          </a>
+        </div>
+        <div>
+          <div class="socials-block">
+            <a href class="instagram-icon"
+              ><svg><use xlink:href="./img/icons.svg#instagram-icon"></use></svg
+            ></a>
+            <a href class="vk-icon"
+              ><svg><use xlink:href="./img/icons.svg#vk-icon"></use></svg
+            ></a>
+            <a href class="fb-icon"
+              ><svg><use xlink:href="./img/icons.svg#fb-icon"></use></svg
+            ></a>
+            <a href class="tiktok-icon"
+              ><svg><use xlink:href="./img/icons.svg#tiktok-icon"></use></svg
+            ></a>
+          </div>
+          <div class="copyright-block">© ЦИИР БГУИР, 2002-2022</div>
+        </div>
+      </div>
+      <div class="footer-block-right">
+        <div>
+          <div class="footer-menu">
+            <a href="" class="footer-menu-item">Главная</a
+            ><a href="" class="footer-menu-item">Новости</a
+            ><a href="" class="footer-menu-item">Каталог</a
+            ><a href="" class="footer-menu-item">Репозиторий</a>
+          </div>
+          <div class="footer-menu">
+            <a href="" class="footer-menu-item">Услуги</a
+            ><a href="" class="footer-menu-item">Контакты</a
+            ><a href="" class="footer-menu-item">Новые книги</a
+            ><a href="" class="footer-menu-item">FAQ</a>
+          </div>
+        </div>
+
+        <p>
+          Республика Беларусь, 220013<br />г. Минск, ул. П.Бровки 6<br />
+          Телефон: +375 17 293 89 52
+        </p>
+      </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        slidesPerGroup: 1,
+        breakpoints: {
+          1130: { slidesPerView: 4, spaceBetween: 100 },
+          1061: { slidesPerView: 4, spaceBetween: 80 },
+          1024: { slidesPerView: 4, spaceBetween: 70 },
+          920: { slidesPerView: 4, spaceBetween: 80 },
+          870: { slidesPerView: 4, spaceBetween: 70 },
+          795: { slidesPerView: 4, spaceBetween: 60 },
+          768: { slidesPerView: 4, spaceBetween: 50 },
+          690: { slidesPerView: 3, spaceBetween: 80 },
+          585: { slidesPerView: 3, spaceBetween: 50 },
+          551: { slidesPerView: 3, spaceBetween: 40 },
+          460: { slidesPerView: 3, spaceBetween: 60 },
+          420: { slidesPerView: 3, spaceBetween: 50 },
+          380: { slidesPerView: 3, spaceBetween: 40 },
+        },
+        loop: true,
+        loopFillGroupWithBlank: true,
+
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+    <script>
+      $(".switch-header-menu-button").click(function () {
+        console.log("dsi");
+        $(".header-menu").toggleClass("active");
+      });
+
+      $(window)
+        .bind("resize", function () {
+          if ($(this).width() >= 768) {
+            $(".header-menu").removeClass("active");
+          }
+        })
+        .trigger("resize");
+    </script>
+
+    <script>
+      $(".header-menu-item").click(function () {
+        $(this).toggleClass("active");
+        $(".header-menu-item").not(this).removeClass("active");
+      });
+    </script>
+  </body>
 </html>
