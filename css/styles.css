@@ -1665,3 +1665,7 @@ footer .socials-block a:hover {
     gap: 3.813rem;
   }
 }
+
+.ymaps-2-1-79-balloon__tail {
+  display: none !important;
+}

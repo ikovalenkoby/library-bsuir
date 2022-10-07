@@ -14,7 +14,7 @@ var markers = [
     name: "Корпус №3",
     info: "<p class='marker-title'>Читальный зал электронная библиотека</p>ул. П. Бровки, 10, ком.106<p>тел. (017)293-86-54 gornostaeva@bsuir.by</p>Понедельник-пятница <span>9.00-19.00</span>, суббота <span>9.00-17.00</span> Выходной: воскресенье.",
     balloonContent: "Читальный зал электронная библиотека",
-    balloonOffset: [5, -68],
+    balloonOffset: [55, -38],
   },
 
   {
@@ -24,6 +24,7 @@ var markers = [
     info: "<p class='marker-title'>Абонемент художественной литературы</p>ул. Гикало, 9, ком.111а<p>тел. (017) 293-23-82 iu.maksimenko@bsuir.by</p>Понедельник-четверг <span>9.00-17.30</span>, пятница <span>с 8.30-16.00</span> Выходные: суббота, воскресенье,<p class='marker-title'>Абонемент учебной литературы</p>ул.Гикало,9,ком.103<p>тел. (017)293-86-52</p>Понедельник-пятница <span>9.00-19.00</span>, суббота <span>9.00-17.00</span> Выходной: воскресенье,<p class='marker-title'>Студенческий читальный зал №2</p>ул. Гикало, 9, ком.107<p>тел. (017)293-86-52</p>Понедельник-пятница <span>9.00-19.00</span>, суббота <span>9.00-17.00</span> Выходной: воскресенье.",
     balloonContent:
       "Абонемент художественной литературы, Абонемент учебной литературы, Студенческий читальный зал №2",
+    balloonOffset: [45, -30],
   },
   {
     id: 4,
@@ -68,7 +69,7 @@ function init() {
       {
         iconLayout: "default#image",
         iconImageHref: "../img/placemark.svg",
-        balloonOffset: marker.balloonOffset ? marker.balloonOffset : [5, -38],
+        balloonOffset: marker.balloonOffset ? marker.balloonOffset : [45, -38],
         hideIconOnBalloonOpen: false,
       }
     );
@@ -111,7 +112,8 @@ function init() {
     });
 
     placemark.events
-      .add("click", function () {
+      .add("click", function (e) {
+        e.preventDefault();
         resetActiveProperties();
         $(menuElement).addClass("active");
         findActiveElement();
