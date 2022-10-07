@@ -17,8 +17,13 @@
     <link rel="stylesheet" href="./css/default.css" />
     <link rel="stylesheet" href="./css/jssor-slider.css" />
 
-    <!-- <script src="./data-yandex.js"></script>
-    <script src="./menu-combined.js"></script> -->
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=15a22a7b-0e73-4388-95ea-f9ef1f05224b&lang=ru_RU"
+      type="text/javascript"
+    ></script>
+    <script src="./data-yandex.js"></script>
+    <script src="./menu-combined.js"></script>
+    <script src="./js/yandexMaps-init.js"></script>
   </head>
   <body>
     <!--JSSOR SLIDER-->
@@ -29,7 +34,7 @@
 
     <header class="wrapper">
       <div class="logo-container">
-        <a href="" class="logo-img">
+        <a href="./" class="logo-img">
           <svg>
             <use xlink:href="./img/icons.svg#logo"></use>
           </svg>
@@ -132,32 +137,31 @@
     </header>
     <main class="wrapper">
       <div class="welcoming-block">
-        <img src="./img/welcoming-picture.jpg" alt="" />
         <div class="welcoming-text">
-          <p>Библиотека БГУИР приветствует Вас!</p>
-          <p>Здесь каждый может исследовать и открывать для себя новое!</p>
-        </div>
-        <div class="main-buttons">
-          <a href="https://library.bsuir.by/">
-            <button class="repo-button">
-              Репозиторий<svg>
-                <use xlink:href="./img/icons.svg#button-arrow-icon"></use>
+          <p class="welcoming-text-big">Библиотека БГУИР приветствует Вас!</p>
+          <p class="welcoming-text-small">
+            Здесь каждый может исследовать и открывать для себя новое!
+          </p>
+          <div class="main-links">
+            <a href="https://library.bsuir.by/" class="repo-link">
+              Репозиторий
+              <svg>
+                <use xlink:href="./img/icons.svg#arrow-icon"></use>
               </svg>
-            </button> </a
-          ><a href="http://megapro/MegaPro/Web">
-            <button class="catalogue-button">
-              Каталог<svg>
-                <use xlink:href="./img/icons.svg#button-arrow-icon"></use>
+            </a>
+            <a href="http://megapro/MegaPro/Web" class="catalogue-link">
+              Каталог
+              <svg>
+                <use xlink:href="./img/icons.svg#arrow-icon"></use>
               </svg>
-            </button>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="gallery">
         <div class="wrapper">
           <div class="photo_show">
-            <!--Слайд-галлерея (28.12 внесены изменения в скрипт)-->
             <script>
               jssor_slider1_starter = function (containerId) {
                 //Reference http://www.jssor.com/development/slider-with-slideshow-no-jquery.html
@@ -343,66 +347,56 @@
         </div>
       </div>
 
-      <div class="buttons-group">
-        <a href="">
-          <button class="delivery-button">
-            <div>
-              <svg>
-                <use xlink:href="./img/icons.svg#button-delivery-icon"></use>
-              </svg>
-            </div>
-            Доставка документов
-          </button> </a
-        ><a href="">
-          <button class="innovations-button">
-            <div>
-              <svg>
-                <use xlink:href="./img/icons.svg#button-innovations-icon"></use>
-              </svg>
-            </div>
-            Центр технологий и инноваций
-          </button>
+      <div class="links-group">
+        <a href="" class="delivery-link">
+          <div>
+            <svg>
+              <use xlink:href="./img/icons.svg#delivery-icon"></use>
+            </svg>
+          </div>
+          Доставка документов </a
+        ><a href="" class="innovations-link">
+          <div>
+            <svg>
+              <use xlink:href="./img/icons.svg#innovations-icon"></use>
+            </svg>
+          </div>
+          Центр технологий и инноваций
         </a>
-        <a href="https://lms.bsuir.by/login/index.php">
-          <button class="seo-button">
-            <div>
-              <svg>
-                <use xlink:href="./img/icons.svg#button-seo-icon"></use>
-              </svg>
-            </div>
-            Система электронного обучения
-          </button> </a
-        ><a href="https://www.scopus.com/search/form.uri?display=basic#basic">
-          <button class="scopus-button">
-            <div>
-              <svg>
-                <use xlink:href="./img/icons.svg#button-scopus-icon"></use>
-              </svg>
-            </div>
-            SCOPUS
-          </button> </a
-        ><a href="">
-          <button class="availability-button">
-            <div>
-              <svg>
-                <use
-                  xlink:href="./img/icons.svg#button-availability-icon"
-                ></use>
-              </svg>
-            </div>
-            Обеспеченность учебных дисциплин
-          </button> </a
-        ><a href="https://elibrary.ru/defaultx.asp">
-          <button class="electronic-magazines-button">
-            <div>
-              <svg>
-                <use
-                  xlink:href="./img/icons.svg#button-electronic-magazines-icon"
-                ></use>
-              </svg>
-            </div>
-            Электронные журналы
-          </button>
+        <a href="https://lms.bsuir.by/login/index.php" class="seo-link">
+          <div>
+            <svg>
+              <use xlink:href="./img/icons.svg#seo-icon"></use>
+            </svg>
+          </div>
+          Система электронного обучения </a
+        ><a
+          href="https://www.scopus.com/search/form.uri?display=basic#basic"
+          class="scopus-link"
+        >
+          <div>
+            <svg>
+              <use xlink:href="./img/icons.svg#scopus-icon"></use>
+            </svg>
+          </div>
+          SCOPUS </a
+        ><a href="" class="availability-link">
+          <div>
+            <svg>
+              <use xlink:href="./img/icons.svg#availability-icon"></use>
+            </svg>
+          </div>
+          Обеспеченность учебных дисциплин </a
+        ><a
+          href="https://elibrary.ru/defaultx.asp"
+          class="electronic-magazines-link"
+        >
+          <div>
+            <svg>
+              <use xlink:href="./img/icons.svg#electronic-magazines-icon"></use>
+            </svg>
+          </div>
+          Электронные журналы
         </a>
       </div>
 
@@ -414,92 +408,78 @@
               <div class="slide-image-container">
                 <img src="./img/1 книга.png" alt="" />
               </div>
-              <div class="slide-button-container">
-                <a href=""><button>Заказать</button></a>
+              <div class="slide-link-container">
+                <a href="">Заказать</a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-image-container">
                 <img src="./img/Rectangle 467.png" alt="" />
               </div>
-              <div class="slide-button-container">
-                <a href=""><button>Заказать</button></a>
+              <div class="slide-link-container">
+                <a href="">Заказать</a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-image-container">
                 <img src="./img/14-690x1024 1.png" alt="" />
               </div>
-              <div class="slide-button-container">
-                <a href=""><button>Заказать</button></a>
+              <div class="slide-link-container">
+                <a href="">Заказать</a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-image-container">
                 <img src="./img/Jacket 1.png" alt="" />
               </div>
-              <div class="slide-button-container">
-                <a href=""><button>Заказать</button></a>
+              <div class="slide-link-container">
+                <a href="">Заказать</a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-image-container">
                 <img src="./img/1025037466.jpg" alt="" />
               </div>
-              <div class="slide-button-container">
-                <a href=""><button>Заказать</button></a>
+              <div class="slide-link-container">
+                <a href="">Заказать</a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-image-container">
                 <img src="./img/thus-spake-zarathustra-15.jpg" alt="" />
               </div>
-              <div class="slide-button-container">
-                <a href=""><button>Заказать</button></a>
+              <div class="slide-link-container">
+                <a href="">Заказать</a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-image-container">
                 <img src="./img/335ca9d63a7fc04ecbfb698101f9e68d.jpg" alt="" />
               </div>
-              <div class="slide-button-container">
-                <a href=""><button>Заказать</button></a>
+              <div class="slide-link-container">
+                <a href="">Заказать</a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-image-container">
                 <img src="./img/51faLlm1iVL.jpg" alt="" />
               </div>
-              <div class="slide-button-container">
-                <a href=""><button>Заказать</button></a>
+              <div class="slide-link-container">
+                <a href="">Заказать</a>
               </div>
             </div>
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </div>
-        <a href=""><button>Посмотреть все</button></a>
+        <a href="">Посмотреть все</a>
       </div>
 
       <div class="map-block">
-        <div class="map-navigation">
-          <div class="active department">Корпус №2</div>
-          <div class="department">Корпус №3</div>
-          <div class="department">Корпус №4</div>
-          <div class="department">Корпус №8</div>
-        </div>
-        <div class="map-container">
-          <script
-            type="text/javascript"
-            charset="utf-8"
-            async
-            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4f9685c70452a020c2c4f574055a952f0489513f352f77792c7b53e5200998c9&amp;width=756&amp;height=565&amp;lang=ru_RU&amp;scroll=true"
-          ></script>
-          <div class="map-text">
-            Библиотека БГУИР,<br />
-            отдел каталогизации<br />библиотеки<br />Открыто до 17:30<br />+375
-            17 293-86-90
-          </div>
+        <ul class="map-menu"></ul>
+        <div class="d-flex">
+          <div id="map"></div>
+          <div class="marker-info"></div>
         </div>
       </div>
     </main>
@@ -532,14 +512,14 @@
         </div>
       </div>
       <div class="footer-block-right">
-        <div>
-          <div class="footer-menu">
+        <div class="footer-menu">
+          <div class="footer-menu__column">
             <a href="" class="footer-menu-item">Главная</a
             ><a href="" class="footer-menu-item">Новости</a
             ><a href="" class="footer-menu-item">Каталог</a
             ><a href="" class="footer-menu-item">Репозиторий</a>
           </div>
-          <div class="footer-menu">
+          <div class="footer-menu__column">
             <a href="" class="footer-menu-item">Услуги</a
             ><a href="" class="footer-menu-item">Контакты</a
             ><a href="" class="footer-menu-item">Новые книги</a
@@ -547,10 +527,15 @@
           </div>
         </div>
 
-        <p>
-          Республика Беларусь, 220013<br />г. Минск, ул. П.Бровки 6<br />
-          Телефон: +375 17 293 89 52
-        </p>
+        <div class="footer-info">
+          <div class="footer-info__address">
+            Республика Беларусь, 220013 г. Минск, ул. П.Бровки 6
+          </div>
+          <div class="footer-info__phone">
+            <p>Телефон:</p>
+            <p>+375 17 293 89 52</p>
+          </div>
+        </div>
       </div>
     </footer>
 
@@ -596,8 +581,11 @@
 
     <script>
       $(".switch-header-menu-button").click(function () {
-        console.log("dsi");
         $(".header-menu").toggleClass("active");
+        $(".header-menu-item").toggleClass("active");
+        if (!$(".header-menu").hasClass("active")) {
+          $(".header-menu-item").removeClass("active");
+        }
       });
 
       $(window)
@@ -607,12 +595,9 @@
           }
         })
         .trigger("resize");
-    </script>
 
-    <script>
       $(".header-menu-item").click(function () {
         $(this).toggleClass("active");
-        $(".header-menu-item").not(this).removeClass("active");
       });
     </script>
   </body>
