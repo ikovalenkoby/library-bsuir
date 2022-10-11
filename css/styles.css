@@ -724,7 +724,7 @@ footer {
   color: #fff;
   display: flex;
   gap: 8.438rem;
-  font-weight: bold;
+/*  font-weight: bold;*/
 }
 
 footer > div {
@@ -803,7 +803,7 @@ footer .socials-block a:hover {
   padding-top: 0.25rem;
   flex-direction: column;
   max-width: 14.625rem;
-  line-height: 1.125rem;
+  line-height: 1.5rem;
 }
 
 .footer-info__phone {
