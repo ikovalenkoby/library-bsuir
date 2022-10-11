@@ -63,7 +63,7 @@ div.m_g_slides {
 }
 div.m_g_navigator {
   position: absolute;
-  bottom: 26px;
+  bottom: 8px;
   left: 6px;
 }
 div.m_g_bullets {
@@ -75,7 +75,7 @@ div.m_g_bullets {
 .m_g_container span.jssora05r {
   width: 40px;
   height: 40px;
-  top: 50%;
+  top: 45%;
 }
 .m_g_container span.jssora05l {
   left: 1px;
